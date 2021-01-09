@@ -1,5 +1,7 @@
 dependencies:
   '@material-ui/core': 4.11.2_4695a47c40ef995f48f8c834d2fb82ec
+  ky: 0.25.1
+  ky-universal: 0.8.2_ky@0.25.1
   next: 10.0.4_c39e9db791ea05e3ec4e0e74abb7a6b5
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
@@ -1275,6 +1277,12 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-MJ6mFTZ+nPQO+39ua/ltwNePXrfdF3Ww0wP1Od7EePySXN1cP9XNqRQOG3FxTfipp8jx898LUCgBCEP11Qw/ZQ==
+  /data-uri-to-buffer/3.0.1:
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -1652,6 +1660,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
+  /fetch-blob/2.1.1:
+    dev: false
+    engines:
+      node: ^10.17.0 || >=12.3.0
+    peerDependencies:
+      domexception: ^2.0.1
+    resolution:
+      integrity: sha512-Uf+gxPCe1hTOFXwkxYyckn8iUSk6CFXGy5VENZKifovUTZC9eUODWSBhOBS7zICGrAetKzdwLMr85KhIcePMAQ==
   /figgy-pudding/3.5.2:
     dev: false
     resolution:
@@ -2355,6 +2371,28 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
+  /ky-universal/0.8.2_ky@0.25.1:
+    dependencies:
+      abort-controller: 3.0.0
+      ky: 0.25.1
+      node-fetch: 3.0.0-beta.9
+    dev: false
+    engines:
+      node: '>=10.17'
+    peerDependencies:
+      ky: '>=0.17.0'
+      web-streams-polyfill: '>=2.0.0'
+    peerDependenciesMeta:
+      web-streams-polyfill:
+        optional: true
+    resolution:
+      integrity: sha512-xe0JaOH9QeYxdyGLnzUOVGK4Z6FGvDVzcXFTdrYA1f33MZdEa45sUDaMBy98xQMcsd2XIBrTXRrRYnegcSdgVQ==
+  /ky/0.25.1:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-PjpCEWlIU7VpiMVrTwssahkYXX1by6NCT0fhTUX34F3DTinARlgMpriuroolugFPcMgpPWrOW4mTb984Qm1RXA==
   /line-column/1.0.2:
     dependencies:
       isarray: 1.0.0
@@ -2746,6 +2784,15 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  /node-fetch/3.0.0-beta.9:
+    dependencies:
+      data-uri-to-buffer: 3.0.1
+      fetch-blob: 2.1.1
+    dev: false
+    engines:
+      node: ^10.17 || >=12.3
+    resolution:
+      integrity: sha512-RdbZCEynH2tH46+tj0ua9caUHVWrd/RHnRfvly2EVdqGmI3ndS1Vn/xjm5KuGejDt2RNDQsVRLPNd2QPwcewVg==
   /node-html-parser/1.4.9:
     dependencies:
       he: 1.2.0
@@ -4396,6 +4443,8 @@ specifiers:
   '@material-ui/core': ^4.11.2
   '@types/node': ^14.14.20
   '@types/react': ^17.0.0
+  ky: ^0.25.1
+  ky-universal: ^0.8.2
   next: 10.0.4
   react: 17.0.1
   react-dom: 17.0.1
