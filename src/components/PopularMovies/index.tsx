@@ -1,20 +1,26 @@
-import MoviesList from "../MoviesList";
 import {useQuery} from "react-query";
 import {getPopularMovies} from "../../services/TMDB";
 import Typography from "@material-ui/core/Typography";
+import SectionTitle from "../SectionTitle";
+import ReleasesList from "../ReleasesList";
+import MovieCard from "../Card/MovieCard";
 
 function PopularMovies() {
 	const {data, status} = useQuery("popularMovies", () => getPopularMovies());
 
+	// TODO - Create proper loading placeholder
 	return <div>
-		<Typography variant="h4" gutterBottom={true}>
+		<SectionTitle>
 			Popular movies
-		</Typography>
+		</SectionTitle>
 		{status === "loading" &&
 		<Typography variant="caption" gutterBottom={true}>
 			Loading...
 		</Typography>}
-		{status === "success" && <MoviesList movies={data?.results} />}
+		{status === "success" &&
+		<ReleasesList>
+			{data.results.map((movie) => <MovieCard movie={movie} />)}
+		</ReleasesList>}
 	</div>;
 }
 
