@@ -1,16 +1,12 @@
 import Header from "../components/Header";
+import Container from "@material-ui/core/Container";
 
 function NoAuthLayout({children}) {
 	return <>
-		<Header username="s1doka" />
-		<main>
+		<Header />
+		<Container component='main'>
 			{children}
-		</main>
-		<footer>
-			<p>
-				sooo
-			</p>
-		</footer>
+		</Container>
 	</>;
 }
 
