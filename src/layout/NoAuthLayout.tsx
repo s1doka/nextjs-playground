@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 function NoAuthLayout({children}) {
 	return <>
 		<Header />
-		<Container component='main'>
+		<Container component="main">
 			{children}
 		</Container>
 	</>;

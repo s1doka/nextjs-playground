@@ -1,10 +1,9 @@
 import NoAuthLayout from "../layout/NoAuthLayout";
+import PopularMovies from "../components/PopularMovies";
 
 function Home() {
 	return <div>
-		<h1>
-			Letterboxd Clone
-		</h1>
+		<PopularMovies />
 	</div>;
 }
 
