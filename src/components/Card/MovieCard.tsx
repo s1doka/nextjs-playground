@@ -13,10 +13,10 @@ function MovieCard({movie}: Props) {
 		<img className={classes.media}
 		src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
 		alt={movie.original_title} />
-		<p className={classes.title}>
+		<p className={classes.title} data-testid={`movie-title-${movie.id}`}>
 			{movie.original_title}
 		</p>
-		<span className={classes.releaseDate}>
+		<span className={classes.releaseDate} data-testid={`movie-release-date-${movie.id}`}>
 			{formatReleaseDate(movie.release_date)}
 		</span>
 	</div>;

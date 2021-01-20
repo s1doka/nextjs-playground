@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieCard/> snapshot testing 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-root-1"
+  >
+    <img
+      alt="Suicide Squad"
+      class="makeStyles-media-2"
+      src="https://image.tmdb.org/t/p/w500/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
+    />
+    <p
+      class="makeStyles-title-3"
+    >
+      Suicide Squad
+    </p>
+    <span
+      class="makeStyles-releaseDate-4"
+    >
+      8/2/2016
+    </span>
+  </div>
+</DocumentFragment>
+`;

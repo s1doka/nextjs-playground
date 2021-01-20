@@ -9,6 +9,7 @@ function Footer() {
 		<Container>
 			<Typography>
 				Film data from
+				{" "}
 				<Typography className={classes.link}
 				component="a"
 				href="https://www.themoviedb.org/"
