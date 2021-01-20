@@ -1,5 +1,7 @@
-import Header from "../components/Header";
 import Container from "@material-ui/core/Container";
+
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function NoAuthLayout({children}) {
 	return <>
@@ -7,6 +9,7 @@ function NoAuthLayout({children}) {
 		<Container component="main">
 			{children}
 		</Container>
+		<Footer />
 	</>;
 }
 
