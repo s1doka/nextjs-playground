@@ -86,7 +86,7 @@ function Header() {
 				)}
 				<ListItem component="a"
 				className={classes.link}
-				href="https://github.com/s1doka"
+				href="https://github.com/s1doka/nextjs-playground"
 				target="_blank"
 				referrerPolicy="no-referrer">
 					<ListItemText primary="GitHub" />
