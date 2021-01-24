@@ -32,14 +32,21 @@ describe(
 			},
 		);
 
-		test("should render the movie title and release date", () => {
-			const { getByTestId}= render(<MovieCard movie={movie} />)
+		test(
+			"should render the movie title and release date",
+			() => {
+				const {getByTestId} = render(<MovieCard movie={movie} />);
 
-			expect(getByTestId(`movie-title-${movie.id}`)).toBeVisible()
-			expect(getByTestId(`movie-title-${movie.id}`)).toHaveTextContent(movie.original_title)
+				expect(getByTestId(`movie-title-${movie.id}`)).toBeVisible();
+				expect(getByTestId(`movie-title-${movie.id}`)).toHaveTextContent(
+					movie.original_title,
+				);
 
-			expect(getByTestId(`movie-release-date-${movie.id}`)).toBeVisible()
-			expect(getByTestId(`movie-release-date-${movie.id}`)).toHaveTextContent(formatReleaseDate(movie.release_date))
-		})
+				expect(getByTestId(`movie-release-date-${movie.id}`)).toBeVisible();
+				expect(getByTestId(`movie-release-date-${movie.id}`)).toHaveTextContent(
+					formatReleaseDate(movie.release_date),
+				);
+			},
+		);
 	},
 );

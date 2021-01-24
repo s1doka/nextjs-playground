@@ -5,21 +5,41 @@ exports[`<MovieCard/> snapshot testing 1`] = `
   <div
     class="makeStyles-root-1"
   >
-    <img
-      alt="Suicide Squad"
-      class="makeStyles-media-2"
-      src="https://image.tmdb.org/t/p/w500/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
-    />
-    <p
-      class="makeStyles-title-3"
+    <div
+      class="makeStyles-mediaWrapper-3"
     >
-      Suicide Squad
-    </p>
-    <span
-      class="makeStyles-releaseDate-4"
+      <img
+        alt="Suicide Squad"
+        class="makeStyles-media-2"
+        src="https://image.tmdb.org/t/p/w500/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
+      />
+      <div
+        class="makeStyles-rating-7"
+      >
+        59.1
+        <span
+          class="makeStyles-ratingPercentage-8"
+        >
+          %
+        </span>
+      </div>
+    </div>
+    <div
+      class="makeStyles-info-6"
     >
-      8/2/2016
-    </span>
+      <p
+        class="makeStyles-title-4"
+        data-testid="movie-title-297761"
+      >
+        Suicide Squad
+      </p>
+      <span
+        class="makeStyles-releaseDate-5"
+        data-testid="movie-release-date-297761"
+      >
+        August 03, 2016
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;

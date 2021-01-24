@@ -1,5 +1,9 @@
 import {useStyles} from "./styles";
-import {formatReleaseDate} from "../../services/TMDB";
+import {
+	buildReleaseImagePath,
+	formatRating,
+	formatReleaseDate,
+} from "../../services/TMDB";
 import {TVShow} from "../../types/TMDB";
 
 type Props = {
@@ -10,15 +14,25 @@ function MovieCard({tvShow}: Props) {
 	const classes = useStyles();
 
 	return <div className={classes.root}>
-		<img className={classes.media}
-		src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
-		alt={tvShow.original_name} />
-		<p className={classes.title}>
-			{tvShow.original_name}
-		</p>
-		<span className={classes.releaseDate}>
-			{formatReleaseDate(tvShow.first_air_date)}
-		</span>
+		<div className={classes.mediaWrapper}>
+			<img className={classes.media}
+			src={buildReleaseImagePath(tvShow.poster_path)}
+			alt={tvShow.original_name} />
+			<div className={classes.rating}>
+				{formatRating(tvShow.vote_average)}
+				<span className={classes.ratingPercentage}>
+					%
+				</span>
+			</div>
+		</div>
+		<div className={classes.info}>
+			<p className={classes.title}>
+				{tvShow.original_name}
+			</p>
+			<span className={classes.releaseDate}>
+				{formatReleaseDate(tvShow.first_air_date)}
+			</span>
+		</div>
 	</div>;
 }
 

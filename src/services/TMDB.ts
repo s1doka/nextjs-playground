@@ -34,8 +34,25 @@ async function getPopularTVShows(
 	}
 }
 
-function formatReleaseDate(releaseDate: string) {
-	return new Intl.DateTimeFormat("en-US").format(new Date(releaseDate));
+function formatReleaseDate(releaseDate: string): string {
+	return new Intl.DateTimeFormat(
+		"en",
+		{timeZone: "UTC", day: "2-digit", month: "long", year: "numeric"},
+	).format(new Date(releaseDate));
 }
 
-export {formatReleaseDate, getPopularMovies, getPopularTVShows};
+function formatRating(voteAverage: number): string {
+	return `${voteAverage * 10}`;
+}
+
+function buildReleaseImagePath(releasePosterPath: string) {
+	return `https://image.tmdb.org/t/p/w500${releasePosterPath}`;
+}
+
+export {
+	buildReleaseImagePath,
+	formatRating,
+	formatReleaseDate,
+	getPopularMovies,
+	getPopularTVShows,
+};
