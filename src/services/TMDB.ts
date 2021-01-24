@@ -5,21 +5,27 @@ import {
 	PopularTVShowsResponse,
 } from "../types/TMDB";
 import {
-	TMDB_HTTP_HEADERS,
 	POPULAR_MOVIES_ENDPOINT,
 	POPULAR_TV_SHOWS_ENDPOINT,
+	TMDB_HTTP_HEADERS,
 } from "../configuration/settings";
 
 async function getPopularMovies(
 	searchParams?: APIQueryStrings,
 ): Promise<PopularMoviesResponse> {
-	return await ky.get(POPULAR_MOVIES_ENDPOINT, {headers: TMDB_HTTP_HEADERS, searchParams}).json();
+	return await ky.get(
+		POPULAR_MOVIES_ENDPOINT,
+		{headers: TMDB_HTTP_HEADERS, searchParams},
+	).json();
 }
 
 async function getPopularTVShows(
 	searchParams?: Omit<APIQueryStrings, "region">,
 ): Promise<PopularTVShowsResponse> {
-	return ky.get(POPULAR_TV_SHOWS_ENDPOINT, {headers: TMDB_HTTP_HEADERS, searchParams}).json();
+	return ky.get(
+		POPULAR_TV_SHOWS_ENDPOINT,
+		{headers: TMDB_HTTP_HEADERS, searchParams},
+	).json();
 }
 
 function formatReleaseDate(releaseDate: string): string {
