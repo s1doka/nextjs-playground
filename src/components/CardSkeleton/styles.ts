@@ -5,6 +5,6 @@ export const useStyles = makeStyles(() => ({
 		marginRight: 32,
 	},
 	title: {
-		marginTop: 8
+		marginTop: 8,
 	},
 }));

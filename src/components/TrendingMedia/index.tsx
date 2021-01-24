@@ -1,16 +1,20 @@
 import {useQuery} from "react-query";
-import {getPopularTVShows} from "../../services/TMDB";
+import {getTrendingMedia} from "../../services/TMDB";
 import SectionTitle from "../SectionTitle";
 import ReleasesList from "../ReleasesList";
 import TVShowCard from "../Card/TVShowCard";
 import CardSkeletonList from "../CardSkeleton/CardSkeletonList";
+import MovieCard from "../Card/MovieCard";
 
-function PopularTVShows() {
-	const {data, status} = useQuery("popularTVShows", () => getPopularTVShows());
+function TrendingMedia() {
+	const {data, status} = useQuery(
+		"trendingMedia",
+		() => getTrendingMedia("all", "day"),
+	);
 
 	return <div>
 		<SectionTitle>
-			Popular TV shows
+			Trending
 		</SectionTitle>
 		{status === "loading" && <CardSkeletonList />}
 		{status === "error" &&
@@ -19,9 +23,14 @@ function PopularTVShows() {
 		</p>}
 		{status === "success" &&
 		<ReleasesList>
-			{data.results.map((tvShow) => <TVShowCard tvShow={tvShow} />)}
+			{data.results.map((release) => {
+				if ("original_title" in release) {
+					return <MovieCard movie={release} />;
+				}
+				return <TVShowCard tvShow={release} />;
+			})}
 		</ReleasesList>}
 	</div>;
 }
 
-export default PopularTVShows;
+export default TrendingMedia;

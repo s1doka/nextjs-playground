@@ -10,7 +10,7 @@ type Props = {
 	tvShow: TVShow;
 };
 
-function MovieCard({tvShow}: Props) {
+function TVShowCard({tvShow}: Props) {
 	const classes = useStyles();
 
 	return <div className={classes.root}>
@@ -36,4 +36,4 @@ function MovieCard({tvShow}: Props) {
 	</div>;
 }
 
-export default MovieCard;
+export default TVShowCard;

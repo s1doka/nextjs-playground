@@ -3,11 +3,15 @@ import {
 	APIQueryStrings,
 	PopularMoviesResponse,
 	PopularTVShowsResponse,
+	TrendingMediaResponse,
+	TrendingMediaType,
+	TrendingTimeWindow,
 } from "../types/TMDB";
 import {
 	POPULAR_MOVIES_ENDPOINT,
 	POPULAR_TV_SHOWS_ENDPOINT,
 	TMDB_HTTP_HEADERS,
+	TRENDING_MEDIA_ENDPOINT,
 } from "../configuration/settings";
 
 async function getPopularMovies(
@@ -25,6 +29,16 @@ async function getPopularTVShows(
 	return ky.get(
 		POPULAR_TV_SHOWS_ENDPOINT,
 		{headers: TMDB_HTTP_HEADERS, searchParams},
+	).json();
+}
+
+async function getTrendingMedia(
+	mediaType: TrendingMediaType,
+	timeWindow: TrendingTimeWindow,
+): Promise<TrendingMediaResponse> {
+	return ky.get(
+		`${TRENDING_MEDIA_ENDPOINT}/${mediaType}/${timeWindow}`,
+		{headers: TMDB_HTTP_HEADERS},
 	).json();
 }
 
@@ -49,4 +63,5 @@ export {
 	formatReleaseDate,
 	getPopularMovies,
 	getPopularTVShows,
+	getTrendingMedia,
 };

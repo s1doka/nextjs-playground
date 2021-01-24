@@ -73,6 +73,12 @@ export type TVShow = {
 	original_name: string;
 };
 
+export type TrendingMediaType = "all" | "movie" | "person" | "tv";
+
+export type TrendingTimeWindow = "day" | "week";
+
 export type PopularMoviesResponse = PaginatedResponse<Movie>;
 
 export type PopularTVShowsResponse = PaginatedResponse<TVShow>;
+
+export type TrendingMediaResponse = PaginatedResponse<Movie & TVShow>;
