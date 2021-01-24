@@ -1,9 +1,9 @@
-import Typography from "@material-ui/core/Typography";
 import {useQuery} from "react-query";
 import {getPopularTVShows} from "../../services/TMDB";
 import SectionTitle from "../SectionTitle";
 import ReleasesList from "../ReleasesList";
 import TVShowCard from "../Card/TVShowCard";
+import CardSkeleton from "../CardSkeleton";
 
 function PopularTVShows() {
 	const {data, status} = useQuery("popularTVShows", () => getPopularTVShows());
@@ -13,9 +13,13 @@ function PopularTVShows() {
 			Popular TV shows
 		</SectionTitle>
 		{status === "loading" &&
-		<Typography variant="caption" gutterBottom={true}>
-			Loading...
-		</Typography>}
+		<ReleasesList>
+			<CardSkeleton />
+			<CardSkeleton />
+			<CardSkeleton />
+			<CardSkeleton />
+			<CardSkeleton />
+		</ReleasesList>}
 		{status === "error" &&
 		<p>
 			Something went wrong...
