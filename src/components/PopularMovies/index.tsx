@@ -17,6 +17,7 @@ function PopularMovies() {
 		<Typography variant="caption" gutterBottom={true}>
 			Loading...
 		</Typography>}
+		{status === "error" && <p>Something went wrong...</p>}
 		{status === "success" &&
 		<ReleasesList>
 			{data.results.map((movie) => <MovieCard movie={movie} />)}

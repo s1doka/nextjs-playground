@@ -5,33 +5,21 @@ import {
 	PopularTVShowsResponse,
 } from "../types/TMDB";
 import {
+	TMDB_HTTP_HEADERS,
 	POPULAR_MOVIES_ENDPOINT,
 	POPULAR_TV_SHOWS_ENDPOINT,
-} from "../configuration/env";
+} from "../configuration/settings";
 
-const headers = {
-	"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TMDB_AUTH_TOKEN}`,
-};
-
-// TODO - Improve error handling for HTTP requests
 async function getPopularMovies(
 	searchParams?: APIQueryStrings,
 ): Promise<PopularMoviesResponse> {
-	try {
-		return await ky.get(POPULAR_MOVIES_ENDPOINT, {headers, searchParams}).json();
-	} catch (error) {
-		console.log(error);
-	}
+	return await ky.get(POPULAR_MOVIES_ENDPOINT, {headers: TMDB_HTTP_HEADERS, searchParams}).json();
 }
 
 async function getPopularTVShows(
 	searchParams?: Omit<APIQueryStrings, "region">,
 ): Promise<PopularTVShowsResponse> {
-	try {
-		return ky.get(POPULAR_TV_SHOWS_ENDPOINT, {headers, searchParams}).json();
-	} catch (error) {
-		console.log(error);
-	}
+	return ky.get(POPULAR_TV_SHOWS_ENDPOINT, {headers: TMDB_HTTP_HEADERS, searchParams}).json();
 }
 
 function formatReleaseDate(releaseDate: string): string {

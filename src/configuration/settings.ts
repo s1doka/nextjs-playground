@@ -1,0 +1,8 @@
+const TMDB_HTTP_HEADERS = {
+	"Authorization": `Bearer ${process.env.NEXT_PUBLIC_TMDB_AUTH_TOKEN}`,
+};
+const TMDB_HOST = process.env.NEXT_PUBLIC_TMDB_API_HOST;
+const POPULAR_MOVIES_ENDPOINT = `${TMDB_HOST}/movie/popular`;
+const POPULAR_TV_SHOWS_ENDPOINT = `${TMDB_HOST}/tv/popular`;
+
+export {TMDB_HTTP_HEADERS, POPULAR_MOVIES_ENDPOINT, POPULAR_TV_SHOWS_ENDPOINT};

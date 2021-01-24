@@ -30,7 +30,7 @@ function MyApp({Component, pageProps}) {
 	return <>
 		<Head>
 			<title>
-				Letterboxd Clone | Made with Next.js
+				TMDB Clone
 			</title>
 		</Head>
 		<ThemeProvider theme={theme}>

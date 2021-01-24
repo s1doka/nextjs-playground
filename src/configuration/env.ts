@@ -1,5 +1,0 @@
-const URL = process.env.NEXT_PUBLIC_TMDB_API_HOST;
-const POPULAR_MOVIES_ENDPOINT = `${URL}/movie/popular`;
-const POPULAR_TV_SHOWS_ENDPOINT = `${URL}/tv/popular`;
-
-export {POPULAR_MOVIES_ENDPOINT, POPULAR_TV_SHOWS_ENDPOINT};
