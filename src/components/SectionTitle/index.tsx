@@ -4,7 +4,7 @@ import {useStyles} from "./styles";
 function SectionTitle({children}) {
 	const classes = useStyles();
 
-	return <Typography className={classes.root} variant="h4" gutterBottom={true}>
+	return <Typography className={classes.root} variant="h5" gutterBottom={true}>
 		{children}
 	</Typography>;
 }

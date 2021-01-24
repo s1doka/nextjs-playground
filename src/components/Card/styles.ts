@@ -3,6 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 export const useStyles = makeStyles(() => ({
 	root: {
 		width: 155,
+		marginRight: 32,
 	},
 	media: {
 		width: 155,
