@@ -57,6 +57,51 @@ export type Movie = {
 	vote_average: number;
 };
 
+export type MovieDetail = Movie & {
+	belongs_to_collection: object | null;
+	budget: number;
+	genres: Array<Genre>;
+	homepage: string | null;
+	imdb_id: string | null;
+	production_companies: Array<ProductionCompany>;
+	production_countries: Array<ProductionCountry>;
+	revenue: number;
+	runtime: number | null;
+	spoken_languages: Array<SpokenLanguage>;
+	status: MovieStatus;
+	tagline: string | null;
+};
+
+export type MovieStatus =
+	| "Rumored"
+	| "Planned"
+	| "In Production"
+	| "Post Production"
+	| "Released"
+	| "Canceled";
+
+export type Genre = {
+	id: number;
+	name: string;
+};
+
+export type ProductionCompany = {
+	id: number;
+	name: string;
+	logo_path: string | null;
+	origin_country: string;
+};
+
+export type SpokenLanguage = {
+	iso_639_1: string;
+	name: string;
+};
+
+export type ProductionCountry = {
+	iso_639_1: string;
+	name: string;
+};
+
 export type TVShow = {
 	poster_path: string | null;
 	popularity: number;
@@ -82,3 +127,5 @@ export type PopularMoviesResponse = PaginatedResponse<Movie>;
 export type PopularTVShowsResponse = PaginatedResponse<TVShow>;
 
 export type TrendingMediaResponse = PaginatedResponse<Movie & TVShow>;
+
+export type MovieDetailResponse = MovieDetail;

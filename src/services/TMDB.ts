@@ -1,6 +1,7 @@
 import ky from "ky-universal";
 import {
 	APIQueryStrings,
+	MovieDetailResponse,
 	PopularMoviesResponse,
 	PopularTVShowsResponse,
 	TrendingMediaResponse,
@@ -8,6 +9,7 @@ import {
 	TrendingTimeWindow,
 } from "../types/TMDB";
 import {
+	MOVIE_DETAIL_ENDPOINT,
 	POPULAR_MOVIES_ENDPOINT,
 	POPULAR_TV_SHOWS_ENDPOINT,
 	TMDB_HTTP_HEADERS,
@@ -42,6 +44,10 @@ async function getTrendingMedia(
 	).json();
 }
 
+async function getMovieDetail(id: string): Promise<MovieDetailResponse> {
+	return ky.get(`${MOVIE_DETAIL_ENDPOINT}/${id}`, {headers: TMDB_HTTP_HEADERS}).json();
+}
+
 function formatReleaseDate(releaseDate: string): string {
 	return new Intl.DateTimeFormat(
 		"en",
@@ -61,6 +67,7 @@ export {
 	buildReleaseImagePath,
 	formatRating,
 	formatReleaseDate,
+	getMovieDetail,
 	getPopularMovies,
 	getPopularTVShows,
 	getTrendingMedia,
