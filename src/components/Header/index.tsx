@@ -55,7 +55,7 @@ function Header() {
 				</IconButton>
 				<Link href="/">
 				<Typography variant="h6" noWrap={true} style={{cursor: "pointer"}}>
-					Candy Cinema
+					Next.js playground
 				</Typography>
 				</Link>
 			</Toolbar>
