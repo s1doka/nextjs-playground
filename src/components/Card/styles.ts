@@ -4,6 +4,7 @@ export const useStyles = makeStyles(() => ({
 	root: {
 		width: 155,
 		marginRight: 32,
+		cursor: "pointer",
 	},
 	media: {
 		width: 155,

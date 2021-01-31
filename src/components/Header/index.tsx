@@ -35,10 +35,6 @@ function Header() {
 			text: "Movies",
 			href: "/movies",
 		},
-		{
-			text: "TV Shows",
-			href: "/tv-shows",
-		},
 	];
 
 	return <div className={classes.root}>
@@ -51,15 +47,17 @@ function Header() {
 		)}>
 			<Toolbar>
 				<IconButton color="inherit"
-				aria-label="open drawer"
+				aria-label="Open drawer"
 				onClick={handleDrawerOpen}
 				edge="start"
 				className={clsx(classes.menuButton, open && classes.hide)}>
 					<MenuIcon />
 				</IconButton>
-				<Typography variant="h6" noWrap={true}>
+				<Link href="/">
+				<Typography variant="h6" noWrap={true} style={{cursor: "pointer"}}>
 					Candy Cinema
 				</Typography>
+				</Link>
 			</Toolbar>
 		</AppBar>
 		<Drawer variant="persistent"
