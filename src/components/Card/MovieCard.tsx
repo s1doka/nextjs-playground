@@ -13,9 +13,10 @@ type Props = {
 
 function MovieCard({movie}: Props) {
 	const classes = useStyles();
-	const router = useRouter()
+	const router = useRouter();
 
-	return <div className={classes.root} onClick={async () => router.push(`/movies/${movie.id}`)}>
+	return <div className={classes.root}
+	onClick={async () => router.push(`/movies/${movie.id}`)}>
 		<div className={classes.mediaWrapper}>
 			<img className={classes.media}
 			src={buildReleaseImagePath(movie.poster_path)}

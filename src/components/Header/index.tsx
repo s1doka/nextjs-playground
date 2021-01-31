@@ -54,9 +54,9 @@ function Header() {
 					<MenuIcon />
 				</IconButton>
 				<Link href="/">
-				<Typography variant="h6" noWrap={true} style={{cursor: "pointer"}}>
-					Next.js playground
-				</Typography>
+					<Typography variant="h6" noWrap={true} style={{cursor: "pointer"}}>
+						Next.js playground
+					</Typography>
 				</Link>
 			</Toolbar>
 		</AppBar>
