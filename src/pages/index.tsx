@@ -3,7 +3,7 @@ import PopularMovies from "../components/PopularMovies";
 import PopularTVShows from "../components/PopularTVShows";
 import TrendingMedia from "../components/TrendingMedia";
 
-function Home() {
+function Homepage() {
 	return <div>
 		<PopularMovies />
 		<PopularTVShows />
@@ -11,6 +11,6 @@ function Home() {
 	</div>;
 }
 
-Home.layout = NoAuthLayout;
+Homepage.layout = NoAuthLayout;
 
-export default Home;
+export default Homepage;
