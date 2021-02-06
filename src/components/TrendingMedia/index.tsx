@@ -5,6 +5,17 @@ import ReleasesList from "../ReleasesList";
 import TVShowCard from "../Card/TVShowCard";
 import CardSkeletonList from "../CardSkeleton/CardSkeletonList";
 import MovieCard from "../Card/MovieCard";
+import {Movie, TVShow} from "../../types/TMDB";
+
+function renderMovieCardOrTVShowCard(release: Movie & TVShow) {
+	const isMovie = ("original_title" in release);
+
+	if (isMovie) {
+		return <MovieCard movie={release} />;
+	}
+
+	return <TVShowCard tvShow={release} />;
+}
 
 function TrendingMedia() {
 	const {data, status} = useQuery(
@@ -23,12 +34,7 @@ function TrendingMedia() {
 		</p>}
 		{status === "success" &&
 		<ReleasesList>
-			{data.results.map((release) => {
-				if ("original_title" in release) {
-					return <MovieCard movie={release} />;
-				}
-				return <TVShowCard tvShow={release} />;
-			})}
+			{data.results.map(renderMovieCardOrTVShowCard)}
 		</ReleasesList>}
 	</div>;
 }
