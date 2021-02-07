@@ -1,7 +1,7 @@
 import {useQuery} from "react-query";
 import {getTrendingMedia} from "../../services/TMDB";
 import SectionTitle from "../SectionTitle";
-import ReleasesList from "../ReleasesList";
+import HorizontalScrollingList from "../HorizontalScrollingList";
 import TVShowCard from "../Card/TVShowCard";
 import CardSkeletonList from "../CardSkeleton/CardSkeletonList";
 import MovieCard from "../Card/MovieCard";
@@ -33,9 +33,9 @@ function TrendingMedia() {
 			Something went wrong...
 		</p>}
 		{status === "success" &&
-		<ReleasesList>
+		<HorizontalScrollingList>
 			{data.results.map(renderMovieCardOrTVShowCard)}
-		</ReleasesList>}
+		</HorizontalScrollingList>}
 	</div>;
 }
 

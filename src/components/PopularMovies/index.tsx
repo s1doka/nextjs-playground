@@ -1,5 +1,5 @@
 import SectionTitle from "../SectionTitle";
-import ReleasesList from "../ReleasesList";
+import HorizontalScrollingList from "../HorizontalScrollingList";
 import MovieCard from "../Card/MovieCard";
 import CardSkeletonList from "../CardSkeleton/CardSkeletonList";
 import usePopularMovies from "../../hooks/usePopularMovies";
@@ -17,9 +17,9 @@ function PopularMovies() {
 			Something went wrong...
 		</p>}
 		{status === "success" &&
-		<ReleasesList>
+		<HorizontalScrollingList>
 			{data.results.map((movie) => <MovieCard movie={movie} />)}
-		</ReleasesList>}
+		</HorizontalScrollingList>}
 	</div>;
 }
 

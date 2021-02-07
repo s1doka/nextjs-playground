@@ -1,7 +1,7 @@
 import {useQuery} from "react-query";
 import {getPopularTVShows} from "../../services/TMDB";
 import SectionTitle from "../SectionTitle";
-import ReleasesList from "../ReleasesList";
+import HorizontalScrollingList from "../HorizontalScrollingList";
 import TVShowCard from "../Card/TVShowCard";
 import CardSkeletonList from "../CardSkeleton/CardSkeletonList";
 
@@ -18,9 +18,9 @@ function PopularTVShows() {
 			Something went wrong...
 		</p>}
 		{status === "success" &&
-		<ReleasesList>
+		<HorizontalScrollingList>
 			{data.results.map((tvShow) => <TVShowCard tvShow={tvShow} />)}
-		</ReleasesList>}
+		</HorizontalScrollingList>}
 	</div>;
 }
 

@@ -1,8 +1,8 @@
 import CardSkeleton from ".";
-import ReleasesList from "../ReleasesList";
+import HorizontalScrollingList from "../HorizontalScrollingList";
 
 function CardSkeletonList() {
-	return <ReleasesList>
+	return <HorizontalScrollingList>
 		<CardSkeleton />
 		<CardSkeleton />
 		<CardSkeleton />
@@ -13,7 +13,7 @@ function CardSkeletonList() {
 		<CardSkeleton />
 		<CardSkeleton />
 		<CardSkeleton />
-	</ReleasesList>;
+	</HorizontalScrollingList>;
 }
 
 export default CardSkeletonList;

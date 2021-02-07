@@ -1,6 +1,6 @@
 import {useStyles} from "./styles";
 
-function ReleasesList({children}) {
+function HorizontalScrollingList({children}) {
 	const classes = useStyles();
 
 	return <div className={classes.root}>
@@ -8,4 +8,4 @@ function ReleasesList({children}) {
 	</div>;
 }
 
-export default ReleasesList;
+export default HorizontalScrollingList;
