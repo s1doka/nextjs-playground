@@ -3,37 +3,82 @@ import {useQuery} from "react-query";
 import {buildReleaseImagePath, getMovieDetail} from "../../services/TMDB";
 import {useRouter} from "next/router";
 import Typography from "@material-ui/core/Typography";
+import {makeStyles} from "@material-ui/core/styles";
+import Keywords from "../../components/Keywords";
+import MovieFacts from "../../components/MovieFacts";
+
+const useStyles = makeStyles((theme) => ({
+	layoutGrid: {
+		display: "grid",
+		gridTemplateColumns: "1fr",
+		gap: 16,
+		[theme.breakpoints.up("md")]: {
+			gridTemplateColumns: "75% 1fr",
+		},
+	},
+}));
+
+function LayoutGrid({children}) {
+	const classes = useStyles();
+
+	return <div className={classes.layoutGrid}>
+		{children}
+	</div>;
+}
 
 function MovieDetailPage() {
 	const {query} = useRouter();
-	const {data, status} = useQuery(
+	const movieId = query.id ? query.id.toString() : "";
+	const {data: movie, status} = useQuery(
 		`movie-${query.id}`,
-		() => getMovieDetail(query.id.toString()),
+		() => getMovieDetail(movieId),
 	);
 
-	function WorkInProgress() {
+	function MovieBanner() {
 		return <>
-			<img src={buildReleaseImagePath(data.poster_path)} />
+			<img src={buildReleaseImagePath(movie.poster_path)} />
 			<Typography variant="h4">
-				{data.title}
+				{movie.title}
 			</Typography>
 			<div>
 				<Typography variant="subtitle1">
-					{data.tagline}
+					{movie.tagline}
 				</Typography>
 				<Typography variant="body1">
 					Overview
 				</Typography>
 				<Typography variant="body2">
-					{data.overview}
+					{movie.overview}
 				</Typography>
 			</div>
 		</>;
 	}
 
-	return <p>
-		Coming soon...
-	</p>;
+	return <div>
+		<LayoutGrid>
+			<div>
+				<div>
+					<h2>
+						Top billed cast
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Media
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Recommendations
+					</h2>
+				</div>
+			</div>
+			<div>
+				{status === "success" && <MovieFacts movie={movie} />}
+				<Keywords id={movieId} />
+			</div>
+		</LayoutGrid>
+	</div>;
 }
 
 MovieDetailPage.layout = NoAuthLayout;

@@ -122,6 +122,16 @@ export type TrendingMediaType = "all" | "movie" | "person" | "tv";
 
 export type TrendingTimeWindow = "day" | "week";
 
+export type Keywords = {
+	id: number;
+	name: string;
+};
+
+export type MediaKeywords = {
+	id: number;
+	keywords: Array<Keywords>;
+};
+
 export type PopularMoviesResponse = PaginatedResponse<Movie>;
 
 export type PopularTVShowsResponse = PaginatedResponse<TVShow>;
@@ -129,3 +139,5 @@ export type PopularTVShowsResponse = PaginatedResponse<TVShow>;
 export type TrendingMediaResponse = PaginatedResponse<Movie & TVShow>;
 
 export type MovieDetailResponse = MovieDetail;
+
+export type KeywordsResponse = MediaKeywords;
