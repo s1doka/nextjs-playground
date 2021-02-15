@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
 import Keywords from "../../components/Keywords";
 import MovieFacts from "../../components/MovieFacts";
+import MovieCast from "../../components/MovieCast";
+import MovieMedia from "../../components/MovieMedia";
 
 const useStyles = makeStyles((theme) => ({
 	layoutGrid: {
@@ -57,16 +59,8 @@ function MovieDetailPage() {
 	return <div>
 		<LayoutGrid>
 			<div>
-				<div>
-					<h2>
-						Top billed cast
-					</h2>
-				</div>
-				<div>
-					<h2>
-						Media
-					</h2>
-				</div>
+				<MovieCast id={movieId} />
+				<MovieMedia id={movieId} />
 				<div>
 					<h2>
 						Recommendations

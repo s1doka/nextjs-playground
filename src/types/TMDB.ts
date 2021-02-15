@@ -132,6 +132,57 @@ export type MediaKeywords = {
 	keywords: Array<Keywords>;
 };
 
+export type MovieCast = {
+	adult: boolean;
+	gender: number | null;
+	id: number;
+	known_for_department: string;
+	name: string;
+	original_name: string;
+	popularity: number;
+	profile_path: string | null;
+	cast_id: number;
+	character: string;
+	credit_id: string;
+	order: number;
+};
+
+export type MovieCrew = {
+	adult: boolean;
+	gender: number | null;
+	id: number;
+	known_for_department: string;
+	name: string;
+	original_name: string;
+	popularity: number;
+	profile_path: string | null;
+	credit_id: string;
+	department: string;
+	job: string;
+};
+
+export type MovieCredits = {
+	id: number;
+	cast: Array<MovieCast>;
+	crew: Array<MovieCrew>;
+};
+
+export type Image = {
+	aspect_ratio: number;
+	file_path: string;
+	height: number;
+	iso_639_1: string | null;
+	vote_average: number;
+	vote_count: number;
+	width: number;
+};
+
+export type MovieImages = {
+	id: number;
+	backdrops: Array<Image>;
+	posters: Array<Image>;
+};
+
 export type PopularMoviesResponse = PaginatedResponse<Movie>;
 
 export type PopularTVShowsResponse = PaginatedResponse<TVShow>;
@@ -141,3 +192,7 @@ export type TrendingMediaResponse = PaginatedResponse<Movie & TVShow>;
 export type MovieDetailResponse = MovieDetail;
 
 export type KeywordsResponse = MediaKeywords;
+
+export type MovieCreditsResponse = MovieCredits;
+
+export type MovieImagesResponse = MovieImages;

@@ -2,7 +2,9 @@ import ky from "ky-universal";
 import {
 	APIQueryStrings,
 	KeywordsResponse,
+	MovieCreditsResponse,
 	MovieDetailResponse,
+	MovieImagesResponse,
 	PopularMoviesResponse,
 	PopularTVShowsResponse,
 	TrendingMediaResponse,
@@ -10,7 +12,9 @@ import {
 	TrendingTimeWindow,
 } from "../types/TMDB";
 import {
+	MOVIE_CREDITS_ENDPOINT,
 	MOVIE_DETAIL_ENDPOINT,
+	MOVIE_IMAGES_ENDPOINT,
 	MOVIE_KEYWORDS_ENDPOINT,
 	POPULAR_MOVIES_ENDPOINT,
 	POPULAR_TV_SHOWS_ENDPOINT,
@@ -57,6 +61,20 @@ async function getMovieKeywords(id: string): Promise<KeywordsResponse> {
 	).json();
 }
 
+async function getMovieCredits(id: string): Promise<MovieCreditsResponse> {
+	return ky.get(
+		`${MOVIE_CREDITS_ENDPOINT.replace("$id", id)}`,
+		{headers: TMDB_HTTP_HEADERS},
+	).json();
+}
+
+async function getMovieImages(id: string): Promise<MovieImagesResponse> {
+	return ky.get(
+		`${MOVIE_IMAGES_ENDPOINT.replace("$id", id)}`,
+		{headers: TMDB_HTTP_HEADERS},
+	).json();
+}
+
 function formatReleaseDate(releaseDate: string): string {
 	return new Intl.DateTimeFormat(
 		"en",
@@ -76,7 +94,9 @@ export {
 	buildReleaseImagePath,
 	formatRating,
 	formatReleaseDate,
+	getMovieCredits,
 	getMovieDetail,
+	getMovieImages,
 	getMovieKeywords,
 	getPopularMovies,
 	getPopularTVShows,

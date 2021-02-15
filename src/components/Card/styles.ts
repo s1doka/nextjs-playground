@@ -1,9 +1,9 @@
 import {makeStyles} from "@material-ui/core/styles";
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((theme) => ({
 	root: {
 		width: 155,
-		marginRight: 32,
+		marginRight: theme.spacing(4),
 		cursor: "pointer",
 	},
 	media: {

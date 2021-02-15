@@ -16,6 +16,10 @@ function Keywords({id}: Props) {
 		</h3>
 		{status === "success" &&
 		<ul className={classes.keywordsList}>
+			{data.keywords.length === 0 &&
+			<span>
+				No keywords have been added.
+			</span>}
 			{data.keywords.map((keyword) =>
 				<li className={classes.keyword} key={keyword.id}>
 					{keyword.name}
