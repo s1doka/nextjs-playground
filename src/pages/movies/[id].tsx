@@ -8,6 +8,7 @@ import Keywords from "../../components/Keywords";
 import MovieFacts from "../../components/MovieFacts";
 import MovieCast from "../../components/MovieCast";
 import MovieMedia from "../../components/MovieMedia";
+import Recommendations from "../../components/Recommendations";
 
 const useStyles = makeStyles((theme) => ({
 	layoutGrid: {
@@ -61,11 +62,7 @@ function MovieDetailPage() {
 			<div>
 				<MovieCast id={movieId} />
 				<MovieMedia id={movieId} />
-				<div>
-					<h2>
-						Recommendations
-					</h2>
-				</div>
+				<Recommendations id={movieId} />
 			</div>
 			<div>
 				{status === "success" && <MovieFacts movie={movie} />}

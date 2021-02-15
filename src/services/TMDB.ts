@@ -5,6 +5,7 @@ import {
 	MovieCreditsResponse,
 	MovieDetailResponse,
 	MovieImagesResponse,
+	MovieRecommendationsResponse,
 	PopularMoviesResponse,
 	PopularTVShowsResponse,
 	TrendingMediaResponse,
@@ -16,6 +17,7 @@ import {
 	MOVIE_DETAIL_ENDPOINT,
 	MOVIE_IMAGES_ENDPOINT,
 	MOVIE_KEYWORDS_ENDPOINT,
+	MOVIE_RECOMMENDATIONS_ENDPOINT,
 	POPULAR_MOVIES_ENDPOINT,
 	POPULAR_TV_SHOWS_ENDPOINT,
 	TMDB_HTTP_HEADERS,
@@ -75,6 +77,15 @@ async function getMovieImages(id: string): Promise<MovieImagesResponse> {
 	).json();
 }
 
+async function getMovieRecommendations(
+	id: string,
+): Promise<MovieRecommendationsResponse> {
+	return ky.get(
+		`${MOVIE_RECOMMENDATIONS_ENDPOINT.replace("$id", id)}`,
+		{headers: TMDB_HTTP_HEADERS},
+	).json();
+}
+
 function formatReleaseDate(releaseDate: string): string {
 	return new Intl.DateTimeFormat(
 		"en",
@@ -98,6 +109,7 @@ export {
 	getMovieDetail,
 	getMovieImages,
 	getMovieKeywords,
+	getMovieRecommendations,
 	getPopularMovies,
 	getPopularTVShows,
 	getTrendingMedia,

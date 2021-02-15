@@ -196,3 +196,5 @@ export type KeywordsResponse = MediaKeywords;
 export type MovieCreditsResponse = MovieCredits;
 
 export type MovieImagesResponse = MovieImages;
+
+export type MovieRecommendationsResponse = PaginatedResponse<Movie>;
