@@ -31,3 +31,14 @@ npm run lint:fix
 ```
 
 Be aware that `rome` is still in `beta` and there are some rules that doesn't handle well some lines of code on this project. It's a great tool though!
+
+## Roadmap
+
+- [ ] TV Shows list / detail page
+- [ ] Search functionality
+- [ ] Sorting / filters
+- [ ] Cast detail page
+- [ ] Loading placeholders
+- [ ] Google Tag Manager
+- [ ] Honeycomb
+- [ ] Sentry
