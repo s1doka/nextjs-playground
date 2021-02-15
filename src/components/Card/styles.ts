@@ -1,19 +1,32 @@
 import {makeStyles} from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
-	root: {
+	largeCard: {
 		width: 155,
 		marginRight: theme.spacing(4),
 		cursor: "pointer",
 	},
-	media: {
+	smallCard: {
+		width: 155,
+		marginRight: theme.spacing(2),
+		cursor: "pointer",
+	},
+	largeImage: {
 		width: 155,
 		height: 225,
+		borderRadius: 16,
+	},
+	smallImage: {
+		height: 175,
 		borderRadius: 16,
 	},
 	mediaWrapper: {
 		position: "relative",
 		marginBottom: 16,
+	},
+	castWrapper: {
+		position: "relative",
+		marginBottom: theme.spacing(1),
 	},
 	title: {
 		fontWeight: 700,

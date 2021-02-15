@@ -15,10 +15,10 @@ function MovieCard({movie}: Props) {
 	const classes = useStyles();
 	const router = useRouter();
 
-	return <div className={classes.root}
+	return <div className={classes.largeCard}
 	onClick={async () => router.push(`/movies/${movie.id}`)}>
 		<div className={classes.mediaWrapper}>
-			<img className={classes.media}
+			<img className={classes.largeImage}
 			src={buildReleaseImagePath(movie.poster_path)}
 			alt={movie.original_title} />
 			<div className={classes.rating}>

@@ -9,9 +9,9 @@ type Props = {
 function MovieCastCard({cast}: Props) {
 	const classes = useStyles();
 
-	return <div className={classes.root}>
-		<div className={classes.mediaWrapper}>
-			<img className={classes.media}
+	return <div className={classes.smallCard}>
+		<div className={classes.castWrapper}>
+			<img className={classes.smallImage}
 			src={buildReleaseImagePath(cast.profile_path)}
 			alt={cast.name} />
 		</div>

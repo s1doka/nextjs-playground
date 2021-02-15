@@ -5,5 +5,8 @@ export const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		flexWrap: "nowrap",
 		overflowX: "scroll",
+		[theme.breakpoints.down("sm")]: {
+			width: "100vw",
+		},
 	},
 }));

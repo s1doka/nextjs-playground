@@ -13,9 +13,9 @@ type Props = {
 function TVShowCard({tvShow}: Props) {
 	const classes = useStyles();
 
-	return <div className={classes.root}>
+	return <div className={classes.largeCard}>
 		<div className={classes.mediaWrapper}>
-			<img className={classes.media}
+			<img className={classes.largeImage}
 			src={buildReleaseImagePath(tvShow.poster_path)}
 			alt={tvShow.original_name} />
 			<div className={classes.rating}>

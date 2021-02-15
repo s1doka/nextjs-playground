@@ -3,38 +3,38 @@
 exports[`<MovieCard/> snapshot testing 1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-root-1"
+    class="makeStyles-largeCard-1"
   >
     <div
-      class="makeStyles-mediaWrapper-3"
+      class="makeStyles-mediaWrapper-5"
     >
       <img
         alt="Suicide Squad"
-        class="makeStyles-media-2"
+        class="makeStyles-largeImage-3"
         src="https://image.tmdb.org/t/p/w500/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
       />
       <div
-        class="makeStyles-rating-7"
+        class="makeStyles-rating-10"
       >
         59.1
         <span
-          class="makeStyles-ratingPercentage-8"
+          class="makeStyles-ratingPercentage-11"
         >
           %
         </span>
       </div>
     </div>
     <div
-      class="makeStyles-info-6"
+      class="makeStyles-info-9"
     >
       <p
-        class="makeStyles-title-4"
+        class="makeStyles-title-7"
         data-testid="movie-title-297761"
       >
         Suicide Squad
       </p>
       <span
-        class="makeStyles-releaseDate-5"
+        class="makeStyles-releaseDate-8"
         data-testid="movie-release-date-297761"
       >
         August 03, 2016
